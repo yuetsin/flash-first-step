@@ -5,8 +5,8 @@ var defaultX = trash.x
 var defaultY = trash.y
 
 // register MOUSE_DOWN & MOUSE_UP events
-trash.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDownHandler)
-trash.addEventListener(MouseEvent.MOUSE_UP,onMouseUpHandler)
+trash.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDownHandler)
+trash.addEventListener(MouseEvent.MOUSE_UP, onMouseUpHandler)
 
 function onMouseDownHandler(evt: MouseEvent): void {
 	evt.currentTarget.startDrag(false)
