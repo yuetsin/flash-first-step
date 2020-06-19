@@ -8,6 +8,7 @@ var mediaLength = media.length
 
 controlButton.label = playTitle
 controlButton.addEventListener(MouseEvent.MOUSE_UP, onControlButtonClicked)
+volumeSlider.addEventListener(Event.CHANGE, onVolumeSliderChanged)
 
 function onControlButtonClicked(evt: MouseEvent): void {
 	if (isMediaPlaying) {
@@ -18,4 +19,12 @@ function onControlButtonClicked(evt: MouseEvent): void {
 		controlButton.label = stopTitle
 	}
 	isMediaPlaying = !isMediaPlaying
+}
+
+function onVolumeSliderChanged(evt: Event) {
+	if (channel) {	
+		var trans: SoundTransform = new SoundTransform()
+		trans.volume = evt.target.value / evt.target.maximum
+		channel.soundTransform = trans
+	}
 }
